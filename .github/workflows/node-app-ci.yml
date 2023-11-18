@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - id: jest-test
-        uses: .github/actions/node-app-test.yml
+        uses: ./.github/actions/node-app-test.yml
