@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node ./node-app/src/index.js",
     "prepare": "husky install",
     "test": "jest"
   },

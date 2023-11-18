@@ -1,0 +1,23 @@
+name: "Node App CI"
+run-name: "Testing the Node App"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./node-app
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: jest-test
+        uses: ./.github/actions/node-app-test.yml
+        
