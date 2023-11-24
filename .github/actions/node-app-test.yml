@@ -5,8 +5,5 @@ runs:
   using: "composite"
   runs-on: ubuntu-latest
   steps:
-    - uses: actions/checkout@v4
-      name: Checkout
-
     - name: "Run Test"
       run: yarn test
