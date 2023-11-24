@@ -11,10 +11,18 @@ on:
 
 jobs:
   testing:
+    strategy:
+      matrix:
+        node-version: ["14.x", "16.x", "18.x"]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         name: Checkout
 
-      - name: jest-test
-        uses: ./.github/actions/test/
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm ci
+      - run: npm test

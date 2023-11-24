@@ -1,9 +1,0 @@
-name: "Node App Test"
-description: "Test the node app with jest"
-
-runs:
-  using: "composite"
-  runs-on: ubuntu-latest
-  steps:
-    - name: "Run Test"
-      run: yarn test
