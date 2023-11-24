@@ -53,4 +53,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.vars.outputs.tag }}
+          tags: khantki/random-petname-node-app:${{ steps.vars.outputs.tag }}
