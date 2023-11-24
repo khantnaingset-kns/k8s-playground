@@ -1,8 +1,12 @@
-name: 'Node App Test'
-description: 'Test the node app with jest'
+name: "Node App Test"
+description: "Test the node app with jest"
 
 runs:
   using: "composite"
   runs-on: ubuntu-latest
   steps:
-    - run: yarn test
+    - uses: actions/checkout@v4
+      name: Checkout
+
+    - name: "Run Test"
+      run: yarn test
