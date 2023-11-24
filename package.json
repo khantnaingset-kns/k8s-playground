@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./node-app/src/index.js",
-    "prepare": "husky install",
+    "prepare": "npx husky install",
     "test": "jest"
   },
   "dependencies": {
