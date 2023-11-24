@@ -17,4 +17,4 @@ jobs:
         name: Checkout
 
       - name: jest-test
-        uses: ./.github/actions/node-app-test.yml
+        uses: ./.github/actions/test/
