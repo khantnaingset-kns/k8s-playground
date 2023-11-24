@@ -11,6 +11,7 @@ on:
 
 jobs:
   testing:
+    name: "Testing the App with Jest"
     strategy:
       matrix:
         node-version: ["18.x", "20.x", "21.x"]
@@ -28,9 +29,16 @@ jobs:
       - run: yarn prepare
       - run: yarn test
 
-  build:
+  publish:
+    name: "Build a Docker image and publish to DockerHub"
     runs-on: ubuntu-latest
     needs: [testing]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
